@@ -1,0 +1,26 @@
+-#  This file is app/views/projects/index.html.haml
+
+%img{:src => "https://avatars3.githubusercontent.com/u/22461398?v=3&s=200"} 
+
+%h1 All Community Service Projects
+
+%table.table#projects
+  %thead
+    %tr
+      %th{:class => @name_header}= link_to 'Name', projects_path(:sort => 'name'), :id => 'name_header'
+      %th{:class => @cause_header}= link_to 'Cause', projects_path(:sort => 'cause'), :id => 'cause_header'
+      %th{:class => @geography_header}= link_to 'Geography', projects_path(:sort => 'geography'), :id => 'geography_header'
+      %th{:class => @volunteers_header}= link_to 'Volunteers', projects_path(:sort => 'volunteers'), :id => 'volunteers_header'
+      %th{:class => @budget_header}= link_to 'Budget', projects_path(:sort => 'budget'), :id => 'budget_header'
+      %th{:class => @difficulty_header}= link_to 'Difficulty', projects_path(:sort => 'difficulty'), :id => 'difficulty_header'
+  %tbody
+    - @projects.each do |project|
+      %tr
+        -# TODO - link to description
+        %td= project.name 
+        %td= project.cause 
+        -# %td= project.description 
+        %td= project.geography 
+        %td= project.volunteers 
+        %td= project.budget 
+        %td= project.difficulty 
