@@ -6,7 +6,7 @@ Feature: display list of service projects Sorted by a given field
 Background: service projects have been added to database
 
   Given the following projects exist:
-  | name                                    | cause             | description   | geography | volunteers    | budget    | difficulty    |
+  | name                                    | cause             | description   | geography | volunteers   | budget    | difficulty    |
   | Bake Sale                               | Any               | example       | Any       | 1            | $1-$49    | Easy          |
   | Highway Cleanup                         | Environment       | example       | Any       | 1            | $1-$49    | Easy          |
   | PBJ Sandwiches for Homeless             | Homelessness      | example       | Urban     | 1            | $1-$49    | Easy          |
