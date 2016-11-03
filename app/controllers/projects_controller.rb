@@ -7,21 +7,20 @@ class ProjectsController < ApplicationController
     def index
         sort = params[:sort] || session[:sort]
         case sort
-        when 'name'
-          ordering,@name_header = {:name => :asc}, 'hilite'
-        when 'cause'
-          ordering,@cause_header = {:cause => :asc}, 'hilite'
-        when 'geography'
-          ordering,@geography_header = {:geography => :asc}, 'hilite'
-        when 'volunteers'
-          ordering,@volunteers_header = {:volunteers => :asc}, 'hilite'
-        when 'budget'
-          ordering,@budget_header = {:budget => :asc}, 'hilite'
-        when 'difficulty'
-          ordering,@difficulty_header = {:difficulty => :asc}, 'hilite'
+            when 'name'
+                ordering,@name_header = {:name => :asc}, 'hilite'
+            when 'cause'
+                ordering,@cause_header = {:cause => :asc}, 'hilite'
+            when 'geography'
+                ordering,@geography_header = {:geography => :asc}, 'hilite'
+            when 'volunteers'
+                ordering,@volunteers_header = {:volunteers => :asc}, 'hilite'
+            when 'budget'
+                ordering,@budget_header = {:budget => :asc}, 'hilite'
+            when 'difficulty'
+                ordering,@difficulty_header = {:difficulty => :asc}, 'hilite'
         end
         @projects = Project.all.order(ordering)
-        
     end
     
     def show

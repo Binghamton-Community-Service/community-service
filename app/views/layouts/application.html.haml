@@ -1,13 +1,15 @@
 !!! 5
 %html
   %head
-    %title Binghamton Community Service
+    %title Community Service!
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
   %body
-    %h1.title Binghamton Community Service
+    -# %h1.title -# "Binghamton Community Service" title
+    %img{:src => "service.jpg"}
+    
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
