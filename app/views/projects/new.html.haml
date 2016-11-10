@@ -1,0 +1,40 @@
+%h4 Add Community Service Project
+
+= form_tag projects_path do
+
+    = label :project, :name, 'Name:'
+    = text_field :project, 'name'
+    %br
+    %br
+    
+    = label :project, :cause, 'Cause:'
+    = text_field :project, 'cause'
+    %br
+    %br
+    
+    = label :project, :description, 'Description:'
+    = text_field :project, 'description'
+    %br
+    %br
+
+    = label :project, :description, 'Geography:'
+    = select :project, 'geography', Project.all_geographies
+    %br
+    %br
+
+    = label :project, :description, 'Volunteers:'
+    = select :project, 'volunteers', Project.all_volunteers
+    %br
+    %br
+
+    = label :project, :description, 'Budget:'
+    = select :project, 'budget', Project.all_budgets
+    %br
+    %br
+
+    = label :project, :description, 'Difficulty:'
+    = select :project, 'difficulty', Project.all_difficulties
+    %br
+    %br
+    
+    = submit_tag 'Submit Project', :class => 'btn btn-default'

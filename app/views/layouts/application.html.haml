@@ -5,15 +5,29 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-
-  %body
-    -# %h1.title -# "Binghamton Community Service" title
-    = image_tag("service.jpg")
     
-    #main
-      - if flash[:notice]
-        #notice.message= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
-
-      = yield
+    
+  %body
+    %nav.navbar.navbar-default{role: "navigation"}
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+        %a.navbar-brand{href: projects_path} Binghamton Community Service
+      .collapse.navbar-collapse.navbar-ex1-collapse
+        %form.navbar-form.navbar-right{role: "search"}
+          .form-group
+            %input.form-control{placeholder: "Search", type: "text"}/
+          %button.btn.btn-default{type: "submit"} Submit
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{href: new_project_path, class: "glyphicon glyphicon-plus"}
+      / /.navbar-collapse
+    
+    
+    %main
+      #main
+        - if flash[:notice]
+          #notice.message= flash[:notice]
+        - elsif flash[:warning]
+          #warning.message= flash[:warning]
+          
+        = yield

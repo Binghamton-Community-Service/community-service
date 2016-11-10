@@ -8,18 +8,22 @@ class ProjectsController < ApplicationController
         sort = params[:sort] || session[:sort]
         case sort
             when 'name'
-                ordering,@name_header = {:name => :asc}, 'hilite'
+                @name_header = 'hilite'
             when 'cause'
-                ordering,@cause_header = {:cause => :asc}, 'hilite'
+                @cause_header = 'hilite'
             when 'geography'
-                ordering,@geography_header = {:geography => :asc}, 'hilite'
+                @geography_header = 'hilite'
             when 'volunteers'
-                ordering,@volunteers_header = {:volunteers => :asc}, 'hilite'
+                @volunteers_header = 'hilite'
             when 'budget'
-                ordering,@budget_header = {:budget => :asc}, 'hilite'
+                @budget_header = 'hilite'
             when 'difficulty'
-                ordering,@difficulty_header = {:difficulty => :asc}, 'hilite'
+                @difficulty_header = 'hilite'
         end
+        var_name = "@#{string}_header"  # the '@' is required
+        self.instance_variable_set(var_name, 'bar')
+        ordering = { sort.to_sym => :asc } unless sort == nil
+
         @projects = Project.all.order(ordering)
     end
     
@@ -29,6 +33,7 @@ class ProjectsController < ApplicationController
     end
 
     def new
+        @project = Project.new
         # default: render 'new' template
     end
 
