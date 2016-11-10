@@ -20,8 +20,9 @@ class ProjectsController < ApplicationController
             when 'difficulty'
                 @difficulty_header = 'hilite'
         end
-        var_name = "@#{string}_header"  # the '@' is required
-        self.instance_variable_set(var_name, 'bar')
+        # var_name = "@#{sort}_header" unless sort == nil
+        # self.instance_variable_set(var_name, sort) unless sort == nil
+        # var_name = 'hilite' unless sort == nil
         ordering = { sort.to_sym => :asc } unless sort == nil
 
         @projects = Project.all.order(ordering)
