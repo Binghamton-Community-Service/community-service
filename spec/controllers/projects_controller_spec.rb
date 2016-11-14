@@ -30,4 +30,16 @@ end
         expect(assigns(:projects)).to all(be_a(Project))
       end
     end
+    
+    context "GET edit" do
+      let (:project) {Project.create()}
+      it  "responds to GET" #do
+     #   get :edit, :id => project
+     # end
+    end
+    
+    context "DELETE destroy" do
+      it "responds to DELETE"
+    end
+    
 end
