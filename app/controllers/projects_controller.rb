@@ -6,26 +6,11 @@ class ProjectsController < ApplicationController
     
     def index
         sort = params[:sort] || session[:sort]
-        case sort
-            when 'name'
-                @name_header = 'hilite'
-            when 'cause'
-                @cause_header = 'hilite'
-            when 'geography'
-                @geography_header = 'hilite'
-            when 'volunteers'
-                @volunteers_header = 'hilite'
-            when 'budget'
-                @budget_header = 'hilite'
-            when 'difficulty'
-                @difficulty_header = 'hilite'
-        end
-        # var_name = "@#{sort}_header" unless sort == nil
-        # self.instance_variable_set(var_name, sort) unless sort == nil
-        # var_name = 'hilite' unless sort == nil
-        ordering = { sort.to_sym => :asc } unless sort == nil
 
-        @projects = Project.all.order(ordering)
+        eval("@#{sort}_header = 'hilite'") unless sort == nil   # Highlight the selected column
+        ordering = { sort.to_sym => :asc } unless sort == nil   # Sort the selected column
+
+        @projects = Project.all.order(ordering)     # Return a list of projects based on the selection, if applicable
     end
     
     def show
