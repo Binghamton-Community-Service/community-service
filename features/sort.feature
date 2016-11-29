@@ -17,7 +17,7 @@ Background: service projects have been added to database
   | Food Bank                               | Homelessness      | example       | Any       | 0           | 0        | 0          |
   | Building Children's Playground          | Children          | example       | Any       | 2           | 4        | 2          |
 
-  And  I am on the home page
+  And I am on the home page
 
 Scenario: Sort by name
   When I follow "Name"
@@ -54,15 +54,23 @@ Scenario: Sort by geography
   Then I should see "Highway Cleanup" before "Farmer's Market and Produce Collection"
   Then I should see "Farmer's Market and Produce Collection" before "Picnic For A Cause"
   Then I should see "Picnic For A Cause" before "PBJ Sandwiches for Homeless"
-  
-  Then I should see "Any" before "Rural"
-  Then I should see "Rural" before "Urban"
 
 Scenario: Sort by volunteers
   When I follow "Volunteers"
+  
+  Then I should see "1+" before "5+"
+  Then I should see "5+" before "15+"
 
 Scenario: Sort by budget
   When I follow "Budget"
-    
+  
+  Then I should see "$0" before "$1-$49"
+  Then I should see "$1-$49" before "$50-$99"
+  Then I should see "$50-$99" before "$100-$249"
+  Then I should see "$100-$249" before "$250"
+  
 Scenario: Sort by difficulty
   When I follow "Difficulty"
+  
+  Then I should see "Easy" before "Medium"
+  Then I should see "Medium" before "Hard"

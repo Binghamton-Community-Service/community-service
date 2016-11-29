@@ -19,7 +19,8 @@
           %button.btn.btn-default{type: "submit"} Submit
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{href: new_project_path, class: "glyphicon glyphicon-plus"}
+            // = link_to 'Add', new_project_path, :id => 'add_link_id'
+            %a{href: new_project_path, class: "glyphicon glyphicon-plus", id: "add_link_id" }
       / /.navbar-collapse
     
     

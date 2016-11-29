@@ -19,7 +19,7 @@
         %td= project.name 
         %td= project.cause 
         -# %td= project.description 
-        %td= project.geography 
-        %td= project.volunteers 
-        %td= project.budget 
-        %td= project.difficulty 
+        %td= project.geography
+        %td= @volunteers[project.volunteers.to_i]
+        %td= @budgets[project.budget.to_i]
+        %td= @difficulties[project.difficulty.to_i]

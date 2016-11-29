@@ -38,8 +38,16 @@ end
      # end
     end
     
+    context "PUT update" do
+      it "responds to PUT"
+    end
+    
     context "DELETE destroy" do
       it "responds to DELETE"
+    end
+    
+    context "GET show" do
+      it "responds to GET"
     end
     
 end

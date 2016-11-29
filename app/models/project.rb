@@ -27,15 +27,15 @@ class Project < ActiveRecord::Base
    end
    
    def self.all_volunteers
-      return @volunteers.keys
+      return @volunteers
    end
    
    def self.all_budgets
-      return @budgets.keys
+      return @budgets
    end
    
    def self.all_difficulties
-      return @budgets.keys
+      return @difficulties
    end
    
 end

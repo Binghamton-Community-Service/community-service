@@ -10,6 +10,10 @@ class ProjectsController < ApplicationController
         eval("@#{sort}_header = 'hilite'") unless sort == nil   # Highlight the selected column
         ordering = { sort.to_sym => :asc } unless sort == nil   # Sort the selected column
 
+        @geographies = Project.all_geographies
+        @volunteers = Project.all_volunteers
+        @difficulties = Project.all_difficulties
+        @budgets = Project.all_budgets
         @projects = Project.all.order(ordering)     # Return a list of projects based on the selection, if applicable
     end
     
@@ -29,6 +33,13 @@ class ProjectsController < ApplicationController
         redirect_to projects_path
     end
 
+    # This would help with canceling input in a form
+    # def check_cancel
+    #     if params[:commit] == "Cancel"
+    #         redirect_to projects_path
+    #     end
+    # end
+    
     def edit
         @project = Project.find params[:id]
     end
