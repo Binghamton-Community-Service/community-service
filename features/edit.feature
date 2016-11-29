@@ -3,8 +3,8 @@ Feature: Edit a current Project
   So that I can edit existing community service ideas
   I want to be able to modify a project that is already posted on the main page
   
-  Background:
-    Given a projects exists:
+Background:
+  Given a projects exists:
   | name                                    | cause             | description   | geography | volunteers  | budget   | difficulty |
   | Bake Sale                               | Any               | example       | Any       | 0           | 1        | 0          |
   | Highway Cleanup                         | Environment       | example       | Any       | 0           | 1        | 0          |
@@ -16,6 +16,6 @@ Feature: Edit a current Project
   | Food Bank                               | Homelessness      | example       | Any       | 0           | 0        | 0          |
   | Building Children's Playground          | Children          | example       | Any       | 2           | 4        | 2          |
     
-  Scenario:
-    Given I am on the home page
+Scenario:
+  Given I am on the home page
     
