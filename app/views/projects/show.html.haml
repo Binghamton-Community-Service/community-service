@@ -1,4 +1,5 @@
-%h2 Details about #{@project.title}
+-# in app/views/projects/show.html.haml
 
-%ul#details
-
+%h2 #{@project.name} description: 
+%h4 #{@project.description}
+= link_to 'Return to main page', projects_path
