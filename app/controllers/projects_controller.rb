@@ -5,16 +5,41 @@ class ProjectsController < ApplicationController
     end
     
     def index
-        sort = params[:sort] || session[:sort]
-
-        eval("@#{sort}_header = 'hilite'") unless sort == nil   # Highlight the selected column
-        ordering = { sort.to_sym => :asc } unless sort == nil   # Sort the selected column
-
+        
+        if params[:clear] == "true"
+            session.clear
+            
+            @projects = Project.all
+        else
+        
+            if !params[:sort] and !params[:search]
+                if session[:sort] or session[:search]
+                    redirect_to projects_path(:sort => session[:sort], :search => session[:search])
+                end
+            end
+            
+            sort = params[:sort]
+            searchParams = params[:search]  
+         
+            session[:sort] = sort unless sort == nil
+            session[:search] = searchParams unless searchParams == nil   
+            
+            eval("@#{session[:sort]}_header = 'hilite'") unless sort == nil   # Highlight the selected column
+            ordering = { session[:sort].to_sym => :asc } unless sort == nil   # Sort the selected column
+            
+            # Return a list of projects based on the selection, if applicable
+            if session[:search] != nil and not session[:search] =~ /\s/
+                @projects = Project.where(['name LIKE ?', "%#{session[:search]}%"]).order(ordering)
+            else
+                @projects = Project.all.order(ordering)
+            end
+        end
+        
         @geographies = Project.all_geographies
         @volunteers = Project.all_volunteers
         @difficulties = Project.all_difficulties
         @budgets = Project.all_budgets
-        @projects = Project.all.order(ordering)     # Return a list of projects based on the selection, if applicable
+
     end
     
     def show
