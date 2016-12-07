@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-07T00:17:26+00:00">2016-12-07T00:17:26+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-12-07T21:42:11+00:00">2016-12-07T21:42:11+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.03
+         4.31
        </span>
     </span> hits/line)
   </h2>
@@ -67,7 +67,7 @@
         <td>33</td>
         <td>22</td>
         <td>11</td>
-        <td>3.8</td>
+        <td>4.1</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>5.3</td>
+        <td>5.6</td>
       </tr>
       
     </tbody>
@@ -103,7 +103,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.64
+         3.92
        </span>
     </span> hits/line)
   </h2>
@@ -145,7 +145,7 @@
         <td>33</td>
         <td>22</td>
         <td>11</td>
-        <td>3.8</td>
+        <td>4.1</td>
       </tr>
       
     </tbody>
@@ -160,7 +160,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.3
+         5.6
        </span>
     </span> hits/line)
   </h2>
@@ -192,7 +192,7 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>5.3</td>
+        <td>5.6</td>
       </tr>
       
     </tbody>
@@ -472,8 +472,8 @@
           <code class="ruby">    def index</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="8">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="8">
+          <span class="hits">15</span>
           
           <code class="ruby">        sort = params[:sort] || session[:sort]</code>
         </li>
@@ -484,14 +484,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="10">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="10">
+          <span class="hits">15</span>
           
           <code class="ruby">        eval(&quot;@#{sort}_header = &#39;hilite&#39;&quot;) unless sort == nil   # Highlight the selected column</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="11">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="11">
+          <span class="hits">15</span>
           
           <code class="ruby">        ordering = { sort.to_sym =&gt; :asc } unless sort == nil   # Sort the selected column</code>
         </li>
@@ -502,32 +502,32 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="13">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="13">
+          <span class="hits">15</span>
           
           <code class="ruby">        @geographies = Project.all_geographies</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="14">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="14">
+          <span class="hits">15</span>
           
           <code class="ruby">        @volunteers = Project.all_volunteers</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="15">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="15">
+          <span class="hits">15</span>
           
           <code class="ruby">        @difficulties = Project.all_difficulties</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="16">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="16">
+          <span class="hits">15</span>
           
           <code class="ruby">        @budgets = Project.all_budgets</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="17">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="17">
+          <span class="hits">15</span>
           
           <code class="ruby">        @projects = Project.all.order(ordering)     # Return a list of projects based on the selection, if applicable</code>
         </li>
@@ -559,7 +559,7 @@
         <li class="missed" data-hits="0" data-linenumber="22">
           
           
-          <code class="ruby">        redirect_to project_path(@id)</code>
+          <code class="ruby">        @project = Project.find(@id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -994,8 +994,8 @@
           <code class="ruby">   def self.all_geographies</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="26">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="16" data-linenumber="26">
+          <span class="hits">16</span>
           
           <code class="ruby">      return @geographies</code>
         </li>
@@ -1018,8 +1018,8 @@
           <code class="ruby">   def self.all_volunteers</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="30">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="16" data-linenumber="30">
+          <span class="hits">16</span>
           
           <code class="ruby">      return @volunteers</code>
         </li>
@@ -1042,8 +1042,8 @@
           <code class="ruby">   def self.all_budgets</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="34">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="16" data-linenumber="34">
+          <span class="hits">16</span>
           
           <code class="ruby">      return @budgets</code>
         </li>
@@ -1066,8 +1066,8 @@
           <code class="ruby">   def self.all_difficulties</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="38">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="16" data-linenumber="38">
+          <span class="hits">16</span>
           
           <code class="ruby">      return @difficulties</code>
         </li>
