@@ -1,6 +1,6 @@
 -#  This file is app/views/projects/index.html.haml
 
-%h4 All Community Service Projects
+%h4= link_to 'All Community Service Projects', projects_path(:clear => "true"), :id => 'index_header'
 
 %table.table#projects
   %thead
