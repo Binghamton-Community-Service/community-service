@@ -1,6 +1,7 @@
 # Binghamton Community Service
-CS 445 Project
-Jeffrey Chan, Jerry Cimo, Scott Frazier, Matthew Miller
+Fall 2016 Semester CS 445 Project
+
+By Jeffrey Chan, Jerry Cimo, Scott Frazier, Matthew Miller
 
 ## Link to Production Version
 https://bing-community-service.herokuapp.com/
