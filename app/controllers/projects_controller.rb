@@ -39,10 +39,6 @@ class ProjectsController < ApplicationController
         @volunteers = Project.all_volunteers
         @difficulties = Project.all_difficulties
         @budgets = Project.all_budgets
-        
-        
-        # session[:sort] = sort unless sort == nil
-        # session[:search] = searchParams unless sort == nil
 
     end
     
