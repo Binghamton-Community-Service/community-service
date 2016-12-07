@@ -16,10 +16,12 @@
     - @projects.each do |project|
       %tr
         -# TODO - link to description
-        %td= project.name 
+        %td= link_to "#{project.name}", project_path(project)
         %td= project.cause 
         -# %td= project.description 
         %td= project.geography
         %td= @volunteers[project.volunteers.to_i]
         %td= @budgets[project.budget.to_i]
         %td= @difficulties[project.difficulty.to_i]
+        %td
+          %a{href: edit_project_path(project), class: "glyphicon glyphicon-edit", id: "edit_link_id" }
