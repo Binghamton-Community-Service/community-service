@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
     
     def show
         @id = params[:id] #retrieve project ID from URI
-        redirect_to project_path(@id)
+        @project = Project.find(@id)
     end
 
     def new
