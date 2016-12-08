@@ -13,14 +13,4 @@
 
 ActiveRecord::Schema.define(version: 20161027003131) do
 
-  create_table "projects", force: :cascade do |t|
-    t.string "name",        limit: 255
-    t.string "cause",       limit: 255
-    t.text   "description"
-    t.text   "geography"
-    t.text   "volunteers"
-    t.text   "budget"
-    t.text   "difficulty"
-  end
-
 end

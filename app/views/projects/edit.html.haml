@@ -23,27 +23,28 @@
     %br
 
     = label :project, :description, 'Volunteers:'
-    = select :project, :volunteers, Project.all_volunteers
+    = select :project, :volunteers, Project.all_volunteers.keys
     %br
     %br
 
     = label :project, :description, 'Budget:'
-    = select :project, :budget, Project.all_budgets
+    = select :project, :budget, Project.all_budgets.keys
     %br
     %br
 
     = label :project, :description, 'Difficulty:'
-    = select :project, :difficulty, Project.all_difficulties
+    = select :project, :difficulty, Project.all_difficulties.keys
     %br
     %br
     
-    = button_to 'Delete', project_path(@project), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger btn-default'
     
     %br
     %br
     %br
     %br
     
-    = submit_tag 'Save Project', :class => 'btn btn-success btn-default'
+    = submit_tag 'Update Project Info', :class => 'btn btn-success btn-default'
     
     = link_to 'Cancel', projects_path, class: 'btn btn-info btn-default'
+    
+    = link_to 'Delete', project_path(@project), :method => :delete, :class => 'btn btn-danger btn-default'
