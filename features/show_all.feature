@@ -32,3 +32,9 @@ Scenario: Show all projects
   Then I should see "Picnic For A Cause"
   Then I should see "Food Bank"
   Then I should see "Building Children's Playground"
+
+Scenario: Redirect using session variables
+  When I fill in "Search" with "Ba"
+  Then I press "Submit"
+  When I follow "title_id"
+  Then I should see "Bake Sale" before "Food Bank"

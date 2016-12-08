@@ -25,4 +25,17 @@ Scenario:
   Then I should see "Bake sale was successfully updated"
   Then I follow "Return to main page"
   Then I should see "Bake sale"
+  
+Scenario:
+  Given I am on the home page
+  When I follow "Bake Sale_edit_link_id"
+  When I fill in "Name" with "Cancel"
+  And I follow "Cancel"
+  Then I should see "Bake Sale"
+  
+Scenario:
+  Given I am on the home page
+  When I follow "Bake Sale_edit_link_id"
+  And I follow "Delete"
+  Then I should see "Highway Cleanup"
     
