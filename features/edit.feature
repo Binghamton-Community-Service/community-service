@@ -3,8 +3,9 @@ Feature: Edit a current Project
   So that I can edit existing community service ideas
   I want to be able to modify a project that is already posted on the main page
   
-Background:
-  Given a projects exists:
+Background: service projects have been added to database
+  
+  Given the following projects exist:
   | name                                    | cause             | description   | geography | volunteers  | budget   | difficulty |
   | Bake Sale                               | Any               | example       | Any       | 0           | 1        | 0          |
   | Highway Cleanup                         | Environment       | example       | Any       | 0           | 1        | 0          |
@@ -18,4 +19,10 @@ Background:
     
 Scenario:
   Given I am on the home page
+  When I follow "Bake Sale_edit_link_id"
+  When I fill in "Name" with "Bake sale"
+  And I press "Update Project Info"
+  Then I should see "Bake sale was successfully updated"
+  Then I follow "Return to main page"
+  Then I should see "Bake sale"
     

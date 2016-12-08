@@ -24,6 +24,6 @@
         %td= @budgets[project.budget.to_i]
         %td= @difficulties[project.difficulty.to_i]
         %td
-          %a{href: project_path(project), class: "glyphicon glyphicon-new-window", id: "show_link_id" }
+          %a{href: project_path(project), class: "glyphicon glyphicon-new-window", id: "#{project.name}_show_link_id" }
         %td
-          %a{href: edit_project_path(project), class: "glyphicon glyphicon-edit", id: "edit_link_id" }
+          %a{href: edit_project_path(project), class: "glyphicon glyphicon-edit", id: "#{project.name}_edit_link_id" }
