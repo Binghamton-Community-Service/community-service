@@ -23,22 +23,22 @@
     %br
 
     = label :project, :description, 'Volunteers:'
-    = select :project, 'volunteers', Project.all_volunteers
+    = select :project, 'volunteers', Project.all_volunteers.keys
     %br
     %br
 
     = label :project, :description, 'Budget:'
-    = select :project, 'budget', Project.all_budgets
+    = select :project, 'budget', Project.all_budgets.keys
     %br
     %br
 
     = label :project, :description, 'Difficulty:'
-    = select :project, 'difficulty', Project.all_difficulties
+    = select :project, 'difficulty', Project.all_difficulties.keys
     %br
     %br
     
     = submit_tag 'Submit Project', :class => 'btn btn-default'
     // = cancel_tag 'Cancel Project', :class => 'btn btn-default'
-    = link_to 'Cancel', projects_path, class: 'btn'
+    = link_to 'Cancel', projects_path
     -# <button type="button" class="btn">Cancel</button>
     

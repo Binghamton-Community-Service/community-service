@@ -1,0 +1,50 @@
+%h4 Edit Community Service Project
+
+= form_tag project_path(@project), :method => :put do
+
+    = label :project, :name, 'Name:'
+    = text_field :project, 'name'
+    %br
+    %br
+    
+    = label :project, :cause, 'Cause:'
+    = text_field :project, 'cause'
+    %br
+    %br
+    
+    = label :project, :description, 'Description:'
+    = text_field :project, 'description'
+    %br
+    %br
+
+    = label :project, :description, 'Geography:'
+    = select :project, :geography, Project.all_geographies
+    %br
+    %br
+
+    = label :project, :description, 'Volunteers:'
+    = select :project, :volunteers, Project.all_volunteers.keys
+    %br
+    %br
+
+    = label :project, :description, 'Budget:'
+    = select :project, :budget, Project.all_budgets.keys
+    %br
+    %br
+
+    = label :project, :description, 'Difficulty:'
+    = select :project, :difficulty, Project.all_difficulties.keys
+    %br
+    %br
+    
+    
+    %br
+    %br
+    %br
+    %br
+    
+    = submit_tag 'Update Project Info', :class => 'btn btn-success btn-default'
+    
+    = link_to 'Cancel', projects_path, class: 'btn btn-info btn-default'
+    
+    = link_to 'Delete', project_path(@project), :method => :delete, :class => 'btn btn-danger btn-default'

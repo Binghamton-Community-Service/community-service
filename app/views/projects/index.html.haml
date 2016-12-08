@@ -11,7 +11,8 @@
       %th{:class => @volunteers_header}= link_to 'Volunteers', projects_path(:sort => 'volunteers'), :id => 'volunteers_header'
       %th{:class => @budget_header}= link_to 'Budget', projects_path(:sort => 'budget'), :id => 'budget_header'
       %th{:class => @difficulty_header}= link_to 'Difficulty', projects_path(:sort => 'difficulty'), :id => 'difficulty_header'
-      %th Description
+      %th View
+      %th Edit
 
   %tbody
     - @projects.each do |project|
@@ -22,4 +23,7 @@
         %td= @volunteers[project.volunteers.to_i]
         %td= @budgets[project.budget.to_i]
         %td= @difficulties[project.difficulty.to_i]
-        %td= link_to "#{project.name} description", project_path(project)
+        %td
+          %a{href: project_path(project), class: "glyphicon glyphicon-new-window", id: "show_link_id" }
+        %td
+          %a{href: edit_project_path(project), class: "glyphicon glyphicon-edit", id: "edit_link_id" }

@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
    }
    
    @budgets = {
-      0 => "$0",
+       0 => "$0",
       1 => "$1-$49",
       2 => "$50-$99",
       3 => "$100-$249",
